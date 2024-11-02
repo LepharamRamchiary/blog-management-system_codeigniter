@@ -37,7 +37,7 @@ $this->load->view('adminpanel/header');
                             <td>".$value['blog_desc']."</td>
                             <td><img src='".base_url().$value['blog_img']."' class='img-fluid' width='100'></td>
 
-                            <td><a class=\"btn btn-info\" href='".base_url().'admin/blog/editblog/1'."'>Edit</a></td>
+                            <td><a class=\"btn btn-info\" href='".base_url().'admin/blog/editblog/'.$value['blogid']."'>Edit</a></td>
                             
                             <td><a class=\"btn btn-danger delete\" href='#.' data-id='".$value['blogid']."'>Delete</a></td>
 
@@ -95,4 +95,15 @@ $this->load->view('adminpanel/footer');
         
 
     })
+
+    <?php 
+        if(isset($_SESSION['updated'])){
+            if($_SESSION['updated'] == "yes"){
+                echo 'alert("Blog Updated Successfully");';
+            }else if($_SESSION['updated'] == "no"){
+                echo 'alert("Something went wrong");';
+            }
+        }
+    ?>
+
 </script>
