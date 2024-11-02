@@ -5,7 +5,7 @@ $this->load->view('adminpanel/header');
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <h2>Add Blog</h2>
 
-    <form action="<?= base_url() . 'admin/blog/addblog_post' ?>" method="post">
+    <form enctype="multipart/form-data" action="<?= base_url() . 'admin/blog/addblog_post' ?>" method="post">
         <div class="form-group">
             <input type="text" class="form-control" name="blog_title" placeholder="Title" />
         </div>
@@ -26,3 +26,15 @@ $this->load->view('adminpanel/header');
 <?php
 $this->load->view('adminpanel/footer');
 ?>
+
+<script type="text/javascript">
+    <?php
+    if (isset($_SESSION['inserted'])) {
+        if($_SESSION['inserted'] == 'yes'){
+            echo "alert('Data Inserted Sucessfully!')";
+        }else{
+            echo "alert('Data Not Inserted!')";
+        }
+    }
+    ?>
+</script>
