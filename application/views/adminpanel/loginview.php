@@ -26,7 +26,7 @@
     </style>
     <link rel="stylesheet" href="https://getbootstrap.com/docs/4.4/examples/sign-in/signin.css" />
 
-    <title>Blog Management System</title>
+    <title>Login</title>
 </head>
 
 <body>
