@@ -5,7 +5,11 @@ class Blog extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('adminpanel/viewblog');
+        $q = $this->db->query("SELECT * FROM `articles` ORDER BY blogid DESC");
+        $data['result'] = $q->result_array();
+
+
+        $this->load->view('adminpanel/viewblog', $data);
     }
     function addblog()
     {
@@ -56,5 +60,15 @@ class Blog extends CI_Controller
         } else {
             // Image is not passed for Upload
         }
+    }
+
+    function editblog($blog_id){
+        print_r($blog_id);
+        
+    }
+
+    function deleteblog($blog_id){
+        print_r($blog_id);
+        
     }
 }

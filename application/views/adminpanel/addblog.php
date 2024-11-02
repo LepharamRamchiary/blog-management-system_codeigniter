@@ -31,9 +31,9 @@ $this->load->view('adminpanel/footer');
     <?php
     if (isset($_SESSION['inserted'])) {
         if($_SESSION['inserted'] == 'yes'){
-            echo "alert('Data Inserted Sucessfully!')";
+            echo "alert('Blog is created Sucessfully!')";
         }else{
-            echo "alert('Data Not Inserted!')";
+            echo "alert('BLog is not created')";
         }
     }
     ?>
