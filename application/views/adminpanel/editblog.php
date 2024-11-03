@@ -6,8 +6,15 @@ $this->load->view('adminpanel/header');
     <h2>Edit Blog</h2>
 
     <form enctype="multipart/form-data" action="<?= base_url() . 'admin/blog/editblog_post' ?>" method="post">
+
+        <select class="custom-select" name="publish_unpublish">
+            <option value="1" <?= ($result[0]['status'] == "1") ? "selected" : "" ?>>Publish</option>
+            <option value="0" <?= ($result[0]['status'] == "0") ? "selected" : "" ?>>Unpublish</option>
+        </select>
+        <br>
+
         <input type="hidden" name="blog_id" value="<?= $blog_id ?>">
-        <div class="form-group">
+        <div class="form-group" style="margin-top: 10px">
             <input type="text" value="<?= $result[0]['blog_title'] ?>" class="form-control" name="blog_title" placeholder="Title" />
         </div>
         <div class="form-group">

@@ -71,7 +71,7 @@ class Blog extends CI_Controller
     function editblog($blog_id)
     {
         print_r($blog_id);
-        $query = $this->db->query("SELECT `blog_title`, `blog_desc`, `blog_img` FROM `articles` WHERE `blogid` = '$blog_id'");
+        $query = $this->db->query("SELECT `blog_title`, `blog_desc`, `blog_img`, `status` FROM `articles` WHERE `blogid` = '$blog_id'");
         $data['result'] = $query->result_array();
         $data['blog_id'] = $blog_id;
         $this->load->view('adminpanel/editblog', $data);
@@ -80,6 +80,7 @@ class Blog extends CI_Controller
     function editblog_post()
     {
         // print_r($_POST);
+        // die();
         // print_r($_FILES);
         if ($_FILES['file']['name']) {
 
@@ -105,8 +106,9 @@ class Blog extends CI_Controller
                 $blog_title = $_POST['blog_title'];
                 $blog_desc = $_POST['blog_desc'];
                 $blog_id = $_POST['blog_id'];
+                $publish_unpublish = $_POST['publish_unpublish'];
 
-                $q = $this->db->query("UPDATE `articles` SET `blog_title` = '$blog_title', `blog_desc` = '$blog_desc', `blog_img` = '$filename_location' WHERE `blogid` = '$blog_id'");
+                $q = $this->db->query("UPDATE `articles` SET `blog_title` = '$blog_title', `blog_desc` = '$blog_desc', `blog_img` = '$filename_location', `status` = '$publish_unpublish' WHERE `blogid` = '$blog_id'");
 
                 if ($q) {
                     $this->session->set_flashdata('updated', 'yes');
@@ -121,8 +123,9 @@ class Blog extends CI_Controller
             $blog_title = $_POST['blog_title'];
                 $blog_desc = $_POST['blog_desc'];
                 $blog_id = $_POST['blog_id'];
+                $publish_unpublish = $_POST['publish_unpublish'];
 
-                $q = $this->db->query("UPDATE `articles` SET `blog_title` = '$blog_title', `blog_desc` = '$blog_desc' WHERE `blogid` = '$blog_id'");
+                $q = $this->db->query("UPDATE `articles` SET `blog_title` = '$blog_title', `blog_desc` = '$blog_desc', `status` = '$publish_unpublish' WHERE `blogid` = '$blog_id'");
 
                 if ($q) {
                     $this->session->set_flashdata('updated', 'yes');
