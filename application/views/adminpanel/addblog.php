@@ -11,6 +11,7 @@ $this->load->view('adminpanel/header');
         </div>
         <div class="form-group">
             <textarea name="blog_desc" class="form-control" placeholder="Description"></textarea>
+
         </div>
         <div class="form-group">
             <input type="file" class="form-control" name="file" />
@@ -30,11 +31,18 @@ $this->load->view('adminpanel/footer');
 <script type="text/javascript">
     <?php
     if (isset($_SESSION['inserted'])) {
-        if($_SESSION['inserted'] == 'yes'){
+        if ($_SESSION['inserted'] == 'yes') {
             echo "alert('Blog is created Sucessfully!')";
-        }else{
+        } else {
             echo "alert('BLog is not created')";
         }
     }
     ?>
+</script>
+
+<!-- CKEDITOR -->
+<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace('blog_desc');
 </script>
