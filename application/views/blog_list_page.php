@@ -59,7 +59,7 @@
                     <a href="#" class="btn btn-secondary my-2">Secondary action</a>
                 </p> -->
                 <p>
-                    <strong>5 blogs</strong>
+                    <strong><?= sizeof($result) ?> blogs</strong>
                 </p>
             </div>
         </section>
@@ -68,62 +68,31 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="<?= base_url() . 'uploads/photo.jpg' ?>" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+
+                    <?php
+
+                    foreach ($result as $key => $value) {
+                        // print_r($value);
+                    ?>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="<?= base_url() . $value['blog_img'] ?>" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text"><?= $value['blog_title'] ?></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a href="<?= base_url() . 'home/blog_detail/' . $value['blogid'] ?>" class="btn btn-sm btn-outline-secondary">View</a>
+                                        </div>
+                                        <!-- <small class="text-muted">9 mins</small> -->
                                     </div>
-                                    <!-- <small class="text-muted">9 mins</small> -->
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="<?= base_url() . 'uploads/photo.jpg' ?>" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    </div>
-                                    <!-- <small class="text-muted">9 mins</small> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="<?= base_url() . 'uploads/photo.jpg' ?>" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    </div>
-                                    <!-- <small class="text-muted">9 mins</small> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="<?= base_url() . 'uploads/photo.jpg' ?>" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    </div>
-                                    <!-- <small class="text-muted">9 mins</small> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+
+                    ?>
+
                 </div>
             </div>
         </div>
