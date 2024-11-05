@@ -25,14 +25,14 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                        <p class="text-muted">This mini project is developed using CodeIgniter 3 and Bootstrap 4 to understand the basics of CodeIgniter. It serves as a learning tool to explore CodeIgniter’s structure, controllers, and views, along with Bootstrap for responsive design, offering a practical experience in building web applications from scratch.</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                            <li><a href="#" class="text-white">Like on Facebook</a></li>
-                            <li><a href="#" class="text-white">Email me</a></li>
+                            <li><a href="https://www.linkedin.com/in/lepharam-ramchiary-576282215/" class="text-white" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/LepharamRamchiary" class="text-white" target="_blank">GitHub</a></li>
+                            <li class="text-white">Phone No: 9101318307</li>
                         </ul>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
-                <a href="<?= base_url()?>" class="navbar-brand d-flex align-items-center">
+                <a href="<?= base_url() ?>" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
                         <circle cx="12" cy="13" r="4"></circle>
@@ -65,23 +65,15 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row">
-
-                    <!--  -->
                     <div class="col-md-12">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src="<?= base_url() . $result[0]['blog_img'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-text"><?= $result[0]['blog_desc'] ?></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <!-- <small class="text-muted">9 mins</small> -->
-                                </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
         </div>
         </div>
@@ -93,7 +85,7 @@
             <p class="float-right">
                 <a href="#">Back to top</a>
             </p>
-            <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+            <p>Blog(Album example) is &copy; Bootstrap, but please download and customize it for yourself!</p>
             <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
         </div>
     </footer>
